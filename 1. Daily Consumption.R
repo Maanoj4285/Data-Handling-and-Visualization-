@@ -1,4 +1,4 @@
-#Grouped Bar chart
+#Grouped Barchart
 install.packages(c("ggplot2", "reshape2"))
 library(ggplot2)
 library(reshape2)
