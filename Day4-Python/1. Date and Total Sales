@@ -1,0 +1,16 @@
+#to visualise date and the totalsales
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('Data.csv', encoding='latin-1')
+df['Order_Date'] = pd.to_datetime(df['Order_Date'])
+
+sales_over_time = df.groupby('Order_Date')['Sales'].sum()
+
+plt.figure(figsize=(10,6))
+plt.plot(sales_over_time, marker='o', linestyle='-')
+plt.title('Sales Over Time')
+plt.xlabel('Date')
+plt.ylabel('Total Sales')
+plt.grid(True)
+plt.show()
